@@ -1,6 +1,6 @@
 import React from 'react';
-import Timer from './Timer';
-import TodoList from './TodoList';
+import Timer from './timer';
+import TodoList from './todolist';
 import './styles.css';
 
 const App = () => {
