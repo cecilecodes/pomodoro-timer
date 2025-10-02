@@ -25,13 +25,13 @@ const TodoList = () => {
 
   return (
     <div className="todo-container">
-      <h2>To-Do List</h2>
+      <h2>List of Tasks</h2>
       <form onSubmit={handleAddTask} className="todo-form">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Add a new task..."
+          placeholder="Tasks to finish?"
           className="todo-input"
         />
         <button type="submit" className="todo-button">Add</button>

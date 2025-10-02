@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
   const POMODORO_TIME = 25 * 60; // 25 minutes
-  const SHORT_BREAK = 5 * 60;    // 5 minutes
-  const LONG_BREAK = 15 * 60;   // 15 minutes
+  const SHORT_BREAK = 10 * 60;    // 10 minutes
 
   const [time, setTime] = useState(POMODORO_TIME);
   const [isActive, setIsActive] = useState(false);
@@ -29,18 +28,14 @@ const Timer = () => {
     if (session === 'Pomodoro') {
       setPomodorosCompleted((prev) => prev + 1);
       if (pomodorosCompleted % 4 === 3) {
-        setSession('Long Break');
-        setTime(LONG_BREAK);
-        alert("Time for a long break!");
-      } else {
         setSession('Short Break');
         setTime(SHORT_BREAK);
-        alert("Time for a short break!");
+        alert("10min. break starts now!");
       }
     } else {
       setSession('Pomodoro');
       setTime(POMODORO_TIME);
-      alert("Break is over! Time to focus.");
+      alert("Resume to Focus Time!");
     }
     setIsActive(false);
   };
